@@ -2,7 +2,6 @@
 import { type CollectionEntry, render } from "astro:content";
 import Masthead from "@/components/blog/Masthead.astro";
 import TOC from "@/components/blog/TOC.astro";
-import WebMentions from "@/components/blog/webmentions/index.astro";
 import BaseLayout from "./Base.astro";
 import SeriesPanel from "@/components/SeriesPanel.astro";
 import { Icon } from "astro-icon/components";
@@ -76,7 +75,6 @@ const { headings } = await render(post);
 			<div class="prose prose-citrus max-w-none flex-grow prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
 				<slot />
 			</div>
-			<WebMentions />
 		</article>
 		{!!headings.length && (
 			<aside 

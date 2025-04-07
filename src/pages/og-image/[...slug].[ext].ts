@@ -124,7 +124,7 @@ export async function GET(context: APIContext) {
   });
   const svg = await satori(markup(title, postDate), ogOptions);
 
-  // Проверяем, запрашивает ли пользователь PNG
+  // Check if the user is requesting a PNG
   if (context.url.pathname.endsWith(".png")) {
     const png = new Resvg(svg).render().asPng();
     return new Response(png, {
@@ -135,7 +135,7 @@ export async function GET(context: APIContext) {
     });
   }
 
-  // Проверяем, запрашивает ли пользователь SVG
+  // Check if the user is requesting an SVG
   if (context.url.pathname.endsWith(".svg")) {
     return new Response(svg, {
       headers: {
@@ -145,7 +145,7 @@ export async function GET(context: APIContext) {
     });
   }
 
-  // Если запрос не заканчивается на .png или .svg, возвращаем ошибку
+  // If the request doesn't end with .png or .svg, return an error
   return new Response("Unsupported format", { status: 400 });
 }
 
