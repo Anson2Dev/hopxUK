@@ -29,9 +29,14 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 		<div class="absolute top-[-20%] left-[-50%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div>
 		<div class="absolute top-[-20%] right-[-50%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div>
 	</div>
-	<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
+	<section class="max-w-xl mx-auto relative flex flex-col items-center justify-center h-screen -mt-24">
+		<!-- Hero image -->
+		<div class="relative z-10 mb-8 hidden md:block [&.menu-active]:hidden"></div>
+			<img src="brand.svg" alt="Hero image" class="w-48 h-48 md:w-64 md:h-64" />
+		</div>
+		<!-- Hero text -->
 		<div class="w-full text-center">
-			<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
+			<span class="title text-2xl md:text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
 				Welcome to Hopx.uk
 			</span>
 			<p class="mt-4 mb-4 text-lg font-medium">

@@ -125,7 +125,7 @@ export default {
               },
             },
 
-            // Стиль для блоков кода
+            // Style for code blocks
             pre: {
               "@apply relative py-1.5": "",
             },
@@ -194,7 +194,7 @@ export default {
               "@apply items-center min-h-8": "",
             },
             "td, th": {
-              "@apply px-4 py-1": "", // Паддинг для всех ячеек таблицы
+              "@apply px-4 py-1": "", // Padding for all table cells
             },
             'th[align="center"], td[align="center"]': {
               "text-align": "center",
@@ -205,12 +205,12 @@ export default {
             'th[align="left"], td[align="left"]': {
               "text-align": "left",
             },
-            // Чередующиеся фоны для строк таблицы
+            // Alternating backgrounds for table rows
             "tbody tr:nth-child(odd)": {
-              "@apply bg-color-100": "", // Белый фон для четных строк
+              "@apply bg-color-100": "", // White background for odd rows
             },
             "tbody tr:nth-child(even)": {
-              "@apply bg-color-50": "", // Белый фон для четных строк
+              "@apply bg-color-50": "", // White background for even rows
             },
 
             /* Admonitions/Aside */

@@ -11,7 +11,8 @@
     "format": "pnpm run format:code && pnpm run format:imports",
     "format:code": "biome format . --write && prettier -w \"**/*\" \"!**/*.{md,mdx}\" --ignore-unknown --cache",
     "format:imports": "biome check --formatter-enabled=false --write",
-    "check": "astro check"
+    "check": "astro check",
+    "postinstall": "node -e \"const arch = process.arch; if (arch === 'arm64') { console.log('Installing sharp for M-series Mac...'); require('child_process').execSync('npm install sharp@^0.33.5 --platform=darwin --arch=arm64', {stdio: 'inherit'}); } else { console.log('Installing sharp for x86 Mac...'); require('child_process').execSync('npm install sharp@^0.33.5 --platform=darwin --arch=x64', {stdio: 'inherit'}); }\""
   },
   "dependencies": {
     "@astrojs/mdx": "4.0.3",

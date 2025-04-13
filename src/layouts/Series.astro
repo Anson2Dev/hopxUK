@@ -132,28 +132,28 @@ const { headings } = await render(series);
 
 <script>
 	const ANIMATION_DURATION = 300;
-	// Получаем элементы кнопок и панели
+	// Get button and panel elements
 	const togglePanelBtn = document.getElementById("toggle-panel");
 	const closePanelBtn = document.getElementById("close-panel");
 	const seriesPanel = document.getElementById("series-panel");
 	const togglePanelMobileBtn = document.getElementById("toggle-panel-mobile");
 
-	// Убедимся, что seriesPanel существует
+	// Make sure that seriesPanel exists
 	if (!seriesPanel) {
-		console.error("Элемент series-panel не найден");
+		console.error("Element series-panel not found");
 		throw new Error("series-panel is required");
 	}
 
-	// Функция для проверки, видима ли панель
+	// Function to check if the panel is visible
 	const isPanelVisible = () => {
-		const isScreenLg = window.matchMedia("(min-width: 1024px)").matches; // Большие экраны
+		const isScreenLg = window.matchMedia("(min-width: 1024px)").matches; // Large screens
 		return (
 			(isScreenLg && seriesPanel.classList.contains("lg:block")) ||
 			(!isScreenLg && !seriesPanel.classList.contains("hidden"))
 		);
 	};
 
-	// Функция для скрытия панели
+	// Function to hide the panel
 	const hidePanel = () => {
 		seriesPanel.classList.add("opacity-0", "-translate-x-full");
 		setTimeout(() => {
@@ -162,7 +162,7 @@ const { headings } = await render(series);
 		}, ANIMATION_DURATION);
 	};
 
-	// Функция для показа панели
+	// Function to show the panel
 	const showPanel = () => {
 		seriesPanel.classList.remove("hidden");
 		seriesPanel.classList.add("block", "lg:block");
@@ -171,37 +171,37 @@ const { headings } = await render(series);
 		}, 10);
 	};
 
-	// Общий обработчик для обеих кнопок
+	// Common handler for both buttons
 	const togglePanel = () => {
 		if (isPanelVisible()) {
-			hidePanel(); // Если видима, скрываем
+			hidePanel(); // If visible, hide it
 		} else {
-			showPanel(); // Если скрыта, показываем
+			showPanel(); // If hidden, show it
 		}
 	};
 
-	// Обработчики событий для обеих кнопок
+	// Event handlers for both buttons
 	if (togglePanelBtn) {
 		togglePanelBtn.addEventListener("click", togglePanel);
 	} else {
-		console.error("Элемент toggle-panel не найден");
+		console.error("Element toggle-panel not found");
 	}
 
 	if (togglePanelMobileBtn) {
 		togglePanelMobileBtn.addEventListener("click", togglePanel);
 	} else {
-		console.error("Элемент toggle-panel-mobile не найден");
+		console.error("Element toggle-panel-mobile not found");
 	}
 
 	if (closePanelBtn) {
 		closePanelBtn.addEventListener("click", hidePanel);
 	} else {
-		console.error("Элемент close-panel не найден");
+		console.error("Element close-panel not found");
 	}
 </script>
 
 <script>
-	// Получаем элементы кнопок и панели
+	// Get button and panel elements
 	const toggleTocBtn = document.getElementById('toggle-toc');
 	const closeTocBtn = document.getElementById('close-toc');
 	const tocPanel = document.getElementById('toc-panel');

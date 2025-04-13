@@ -26,7 +26,7 @@ import {
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["webmention.io"],
+    domains: [],
   },
   integrations: [
     icon(),
@@ -127,21 +127,7 @@ export default defineConfig({
   },
   env: {
     schema: {
-      WEBMENTION_API_KEY: envField.string({
-        context: "server",
-        access: "secret",
-        optional: true,
-      }),
-      WEBMENTION_URL: envField.string({
-        context: "client",
-        access: "public",
-        optional: true,
-      }),
-      WEBMENTION_PINGBACK: envField.string({
-        context: "client",
-        access: "public",
-        optional: true,
-      }),
+      // Webmention feature has been removed
     },
   },
   server: {
